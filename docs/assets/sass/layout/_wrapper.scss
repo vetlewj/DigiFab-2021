@@ -22,5 +22,13 @@
         padding: 0 $gutter;
       }
     }
+    .main_article {
+      margin: 0 auto;
+      width: 70%;
+      max-width: 100%;
+      img {
+        max-width: 100%;
+      }
+    }
   }
 }

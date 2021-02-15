@@ -2809,3 +2809,13 @@ body.is-menu-visible #menu .close {
     padding: 0 1.25em;
   }
 }
+
+#wrapper > * .main_article {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 100%;
+}
+
+#wrapper > * .main_article img {
+  max-width: 100%;
+}
