@@ -144,7 +144,9 @@
             <p>
               Disse tegningene var utgangspunktet for modellen min. Jeg startet
               dermed med å lagre de fleste dimensjonene som parametervariabler i
-              Fusion
+              Fusion. Modellen på tegningene var totalt ca 4cm og jeg valgte
+              dermed å gange alle verdiene med 5 slik at totalhøyden endte opp
+              på ca 20cm.
             </p>
             <figure>
               <img
@@ -153,7 +155,254 @@
               />
               <figcaption>Parametervariabler i Fusion 360</figcaption>
             </figure>
-            <p></p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/leg_side_view.png"
+                alt="Sketch av ben fra siden"
+              />
+              <figcaption>Sketch av benet fra siden</figcaption>
+            </figure>
+            <p>
+              Jeg startet fra bunnen av og jobbet meg stort sett oppover, med
+              unntak av armene som jeg lagde til slutt. <br />
+
+              Her manglet jeg noen av dimensjonene og måtte derfor improvisere
+              litt på radiusen på sirkelen og lengden fra tuppen av foten og til
+              "leggen". Her gikk jeg bare for hva jeg synes så riktig ut
+              ettersom jeg ikke hadde en lego figur tilgjengelig som jeg kunne
+              målt. Etter å ha lagd denne sketchen var det bare å extrude den i
+              lengden til bredden på benene (legs_width). Deretter gikk jeg
+              videre til å lage mellomrommet mellom benene.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/leg_gap_sketch.png"
+                alt="Sketch av mellomrommet mellom benene"
+              />
+              <figcaption>Sketch av mellomrommet mellom benene</figcaption>
+            </figure>
+            <p>
+              Her lagde jeg en strek fra midten av føttene og tok den opp så
+              lang den skulle være (legs_gap_height), deretter en strek mot
+              høyre med lengden legs_gap_width/2. Deretter speilet jeg denne om
+              midten. Grunnen til at jeg løste det på denne måten var for å
+              sikre at det kom i midten. <br /><br />
+              Etter dette var det videre til "beltet" på figuren. Her lagde jeg
+              et offset plane på høyden på beina (bare kanten bak, ikke
+              medregnet buen) + 5mm. Jeg tenkte ikke på at dimensjonene på
+              skissene jeg jobbet utifra hadde målt benhøyden helt opp til
+              "beltet" så jeg måtte derfor improvisere litt med høyden. Etter å
+              ha laget dette planet lagde jeg et rektangel med de dimensjonene
+              som var spesifisert og extrudet denne med lengden belt_height.
+              Slik så den foreløpige modellen ut:
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/belt.png"
+                alt="Foreløpig modell der nedre halvdel av figuren er laget"
+              />
+              <figcaption>Foreløpig modell</figcaption>
+            </figure>
+            <p>
+              Etter dette var ferdig, var det videre til overkroppen. Her lagde
+              jeg en sketch med de riktige dimesjonene oppå beltet og deretter
+              et offset plane derfra med lengde til høyden på overkroppen
+              (torso_length). På dette nye planet lagde jeg en skisse for øvre
+              del av overkroppen og brukte deretter loft mellom de to skissene.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/torso_loft.png"
+                alt="Loft-funksjon mellom skissene øverst og nederst på overkroppen"
+              />
+              <figcaption>
+                Loft-funksjon mellom skissene øverst og nederst
+              </figcaption>
+            </figure>
+            <p>
+              Med overkroppen på plass var hodet det neste. Hodet til en lego
+              figur er i bunn og grunn bare satt sammen av sylindere i ulike
+              størrelser. Jeg lagde dermed en skisse for nakken med diameteren
+              neck_width og extrudet den med lengden neck_height. Deretter lagde
+              jeg en ny skisse oppå den for hodet med dimensjonene head_width
+              for diameter og head_height for lengden på extrude. På toppen av
+              sylinderen som var hodet lagde jeg en ny sketch med dimensjonene
+              outer_head_stud_diam for den utvendige diameteren og
+              inner_head_stud_diam for den innvendige diameteren på knotten på
+              hodet. Deretter extrudet jeg den ytterste ringen med lengden
+              head_stud_height. Bildet under er resultatet på dette.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/long_head_finished.png"
+                alt="Modell av lego-hode"
+              />
+              <figcaption>Modellen på lego hodet</figcaption>
+            </figure>
+            <p>
+              Selv om dette var på vei til å bli en god Ki-Adi-Mundi figur ville
+              jeg endre det til noe mer likt den originale lego-figuren. Jeg
+              innså at jeg kanskje har misforstått skissene jeg lagde
+              parametervariablene etter og at hans målinger for head_height var
+              inkludert høyden på både nakken og knotten på toppen av hodet.
+              Heldigvis har jeg brukt parametervariabler stort sett hele veien
+              så det var bare å endre på verdien til head_height slik at den nå
+              ble den opprinnelig head_height - head_stud_height - neck_height.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/head_fixed.png"
+                alt="Fikset modell av lego-hode"
+              />
+              <figcaption>
+                Slik så hodet ut etter jeg fikset opp verdien for head_height
+              </figcaption>
+            </figure>
+            <p>
+              Lego figurer har sjeldent så skarpe kanter så jeg brukte fillet på
+              en del av kantene. Fillet på hodet regnet jeg ut utifra målene på
+              skissen og ganget emd 5 (og fikk dermed 8.75). Ellers var resten
+              på æyemål og utifra hva jeg syntes så bra ut.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/filleted_model.png"
+                alt="Modell med glattere kanter"
+              />
+              <figcaption>
+                Slik så modellen ut etter å ha brukt fillet på noen av kantene
+              </figcaption>
+            </figure>
+            <p>
+              Jeg synes "beltet" så litt rart ut nå, og la derfor til en strek
+              ned på midten. Vanligvis er dette delen som holder benene, men
+              siden denne ikke kan tas fra hverandre er det rent kosmetisk.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/belt_to_gap_sketch.png"
+                alt="Sketch for beltet på figuren"
+              />
+              <figcaption>Sketchen for beltet på figuren</figcaption>
+            </figure>
+            <p>
+              Etter å ha fikset på dette la jeg til farger på figuren sånn at
+              den skulle se bedre ut. De som er brukt på modellen er Paint
+              enamel glossy red/yellow/blue mens materialet fortsatt er det som
+              er standard.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/model_with_colors.png"
+                alt="Modell med farger"
+              />
+              <figcaption>Modell etter jeg har lagt på farger</figcaption>
+            </figure>
+            <p>
+              Armene på lego-figuren var antakeligvis det vanskeligste med hele
+              modellen. Bortsett fra armene er en lego-figur stort sett satt
+              sammen av enkle geometriske figurer. Til armen hadde jeg heller
+              ingen dimensjoner så alt ble gjort på øyemål.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/arms_shoulder_sketch.png"
+                alt="Sketch for skulderen til armen"
+              />
+              <figcaption>Sketch for skulderen til armen</figcaption>
+            </figure>
+            <p>
+              Utifra sketchen til skulderen brukte jeg extrude 20mm for å dra
+              den og deretter draft -20 grader for å få den skrått utover. Det
+              siste jeg gjorde på skulderen var å legge til fillet slik at den
+              ble rund.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/shoulder_extrude.png"
+                alt="Skulderen på modellen etter den er extrudet ut"
+              />
+              <figcaption>Skulderen på modellen</figcaption>
+            </figure>
+            <p>
+              For å fortsette videre på armen lagde jeg første et offset plane
+              at angle 45 grader fra den bakre kanten nederste på skulderen.
+              Deretter lagde jeg igjen et offset plane 25mm ut fra denne hvor
+              jeg skulle lage underarmen.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/arm_offset_planes.png"
+                alt="Offset planes for armen til figuren"
+              />
+              <figcaption>Offset planes for å lage underarmen</figcaption>
+            </figure>
+            <p>
+              Underarmen lagde jeg ved å lage en sirkel på det siste planet jeg
+              laget og bruker loft mellom ny sirkel og flaten under "skuldra"
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/arm_forarm.png"
+                alt="Underarmen til figuren"
+              />
+              <figcaption>Underarmen til figuren</figcaption>
+            </figure>
+            <p>
+              Deretter lages en sirkel med diameter 10mm på armen og extruden
+              den 6mm som blir håndleddet. Etter denne er laget lager jeg en
+              construction line midt i håndleddet for deretter å lage et offset
+              plane at angle på med vinkel -133.7 grader(vinkelrett på
+              håndledd).
+            </p>
+
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/wrist_offset_angle.png"
+                alt="Viser offset angle på håndledd"
+              />
+              <figcaption>
+                Viser at offset at angle på håndleddet ligger vinkelrett på
+                figuren
+              </figcaption>
+            </figure>
+            <p>
+              På dette planet ble det laget en sirkel med diameter 20mm og en
+              sirkel med diameter 12mm inni. Etter dette ble det laget to
+              streker rett ned fra den innerste sirkelen på passende steder og
+              deretter trimmet vekk "fyll" for å lage hendene.
+            </p>
+
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/hand_sketch.png"
+                alt="Sketch av hånden"
+              />
+              <figcaption>Sketch av hånden</figcaption>
+            </figure>
+            <p>
+              Deretter extrudet jeg sketchen begge veier 8mm og la på fillet på
+              2mm for å få en rundere hånd.
+            </p>
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/hand_extruded.png"
+                alt="Ferdig hånd"
+              />
+              <figcaption>"Ferdig" hånd</figcaption>
+            </figure>
+            <p>
+              Da gjenstod det bare å legge farge på armen og speile den om
+              midten så var modellen ferdig.
+            </p>
+
+            <figure>
+              <img
+                src="../images/design_for_fabrikasjon/Fusion360/model_finished.png"
+                alt="Slik ser den ferdige modellen ut"
+              />
+              <figcaption>Slik ser den ferdige modellen ut</figcaption>
+            </figure>
           </div>
         </div>
       </div>
